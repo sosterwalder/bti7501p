@@ -66,6 +66,9 @@ class TreeGame(object):
             ]
         ]
         self.current_player = TreeGame.MAX_PLAYER
+        self.moves = []
+        self.depth = 0
+        self.max_depth = 4
 
     def is_over(self):
         return self.evaluate_value() is not None
@@ -76,3 +79,37 @@ class TreeGame(object):
 
         else:
             self.current_player = TreeGame.MAX_PLAYER
+
+    def make_move(self, move):
+        self.moves.append(move)
+        self.depth += 1
+
+    def undo_move(self, move):
+        self.moves.pop()
+        self.depth -= 1
+
+    def evaluate_value(self):
+        val = self.terminal_states
+
+        for move in self.moves:
+            val = val[move]
+
+        if type(val) is int:
+            return val
+        else:
+            return None
+
+    def successors(self):
+        if self.current_player == TreeGame.MAX_PLAYER:
+            if self.depth % 2 == 1 or self.depth == self.max_depth:
+                return []
+
+            else:
+                return [0, 1]
+
+        else:
+            if self.depth % 2 == 0 or self.depth == self.max_depth:
+                return []
+
+            else:
+                return [0, 1]
