@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# __init__.py - Initializer for the negamax module
+# __init__.py - Initializer for the game module
 #
 # The MIT License (MIT)
 #

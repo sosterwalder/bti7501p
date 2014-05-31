@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# utils.py - Helper class providing utility functions
+# __init__.py - Initializer for the game module
 #
 # The MIT License (MIT)
 #
@@ -22,25 +22,3 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
-# System imports
-import collections
-import itertools
-
-
-class Utils(object):
-
-    @staticmethod
-    def depth(seq):
-        seq = iter(seq)
-
-        try:
-            for level in itertools.count():
-                seq = itertools.chain([next(seq)], seq)
-                seq = itertools.chain.from_iterable(
-                    s for s in seq
-                    if isinstance(s, collections.Sequence)
-                )
-
-        except StopIteration:
-            return level

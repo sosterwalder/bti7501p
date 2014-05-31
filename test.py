@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# negamax_test.py - A module for testing the negamax implmenetation
+# test.py module
 #
 # The MIT License (MIT)
 #
@@ -26,17 +26,27 @@
 # System imports
 
 # Project imports
-import negamax.negamax      as nm
-import tree_game.tree_game  as tg
-import negamax.utils        as utils
+import controller.controller    as c
+import controller.weights       as w
+import controller.game_states   as gs
 
-game = tg.TreeGame()
-negamax = nm.Negamax()
+def main():
+    controller = c.Controller(
+        number_of_rows=5,
+        number_of_columns=5,
+        weights=w.weights_aggressive,
+        barrier=5,
+        verbose=True
+    )
+    controller.play()
 
-depth = utils.Utils.depth(game.terminal_states)
-value = negamax.evaluate(game, depth)
+    if controller.winner == gs.GameStates.STATE_DRAW:
+        print "Oh noes, no winner :'( We've got a DRAW!"
 
-print ''
-print 'End of game.'
-print 'Best value is teh: {0}'.format(value)
-print ''
+    else:
+        print "Yay, we got a winner! Winner is player no. {0}!".format(
+            controller.winner
+        )
+
+if __name__ == "__main__":
+    main()

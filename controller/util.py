@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# __init__.py - Initializer for the tree_game module
+# util.py module
 #
 # The MIT License (MIT)
 #
@@ -22,3 +22,18 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+# System imports
+
+# Project imports
+import board_element  as be
+
+
+class Util(object):
+    @staticmethod
+    def switch_player(board_element):
+        if board_element == be.BoardElement.player1:
+            return be.BoardElement.player2
+
+        else:
+            return be.BoardElement.player1
