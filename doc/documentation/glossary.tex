@@ -1,0 +1,52 @@
+\newglossaryentry{tesselation}{name=Tesselation,
+    description={zu Deutsch Parkettierung. Frei übersetzt nach \citeauthor{schwartzman1994words}. `Von dem lateinischen Wort \textit{tessera} ``eine viereckige Tafel'' oder ``ein Würfel, benutzt zum Spielen''. Das lat. Wort \textit{tessera} wurde sehr wahrscheinlich von dem griechischen Wort tessares, was soviel wie ``vier'' bedeutet, abgeleitet bzw.\ ausgeliehen, da ein quadratisches Feld über vier Seiten verfügt. Die Kurzform von tessera war \textbf{tessella}, ein kleines, quadratisches Stück Stein oder eine kubische Kachel, wie sie bei Mosaik zur Verwendung kommt. Da ein Mosaik sich über eine gegebene Fläche ersttreckt, ohne eine Region auszulassen, ist die geometrische Bedeutung des Wortes tessellieren ``eine Ebene mit einem Muster bedecken, so dass keine Region unbedeckt bleibt.''. Raum oder Hyperraum kann auch tesseliert werden (\citeyear{schwartzman1994words})}
+}
+
+\newglossaryentry{dualGraph}{name=Dualer Graph,
+    description={Gegeben sei $G$, ein kreuzungsfreier, nicht leerer und zusammenhängender Graph. Wie~\cite{klein2005algorithmischegeometrie} angibt, ist ein Graph $G*$ dann dual zu $G$, wenn Folgendes gilt:
+    \begin{compactitem}
+    \item Im Innern jeder Fläche von $G$ werden neue Punkte $p_F^*$ hinzugefügt. Dies sind die Knoten von $G^*$.
+    \item Für jede Kante $e$ (edge) von $G$, welche die angrenzenden Flächen $F$ und $F'$ besitzt, werden die Punkte $p_F^*$ und $p_{F'}^*$ zu einer Kante $e^*$ verbunden. Diese kreuzt nur die Kante $e$ und sonst keine andere Kante.
+    \end{compactitem}
+    Wenn dies gilt, dann ist $\boldsymbol{G^*}$ der \textbf{\textit{duale Graph}} von $G$. ${(G^*)}^*$ ist wiederum zum Graphen $G$ äquivalent}
+}
+
+
+\newglossaryentry{bigOh}{name=Gross-Oh $O()$,
+    description={Die Gross-Oh-Notation $O$ besagt, dass eine Funktion maximal das asymptotische Wachstumsverhalten der angegebenen Funktion aufweist, beispielsweise:
+\noindent\hspace*{10mm}%
+$g \in O(f)$
+Dies besagt, dass die Funktion $g$ in ihrem asymptotischen Wachstum praktisch überall (bis auf einen konstanten Faktor) durch die Funktion $f$ beschränkt ist.
+Sie bildet also eine Art obere Schranke. Frei nach~\citeauthor{goodrich2002algorithm} übersetzt (\citeyear[S. 13]{goodrich2002algorithm})}
+}
+
+\newglossaryentry{bigOmega}{name=Gross-Omega $\Omega()$,
+    description={Die Gross-Omega-Notation $\Omega$ definiert eine untere Schranke, welche besagt, dass eine Funktion bis auf einen konstanten Faktor in ihrem asymptotischen Wachstum grösser oder gleich einer anderen Funktion ist,
+beispielsweise:
+\noindent\hspace*{10mm}%
+$g \in \Omega(f)$
+Wodurch auch $f \in O(g)$ gilt. Frei nach~\citeauthor{goodrich2002algorithm} übersetzt (\citeyear[S. 16 bis 17]{goodrich2002algorithm})}
+}
+
+\newglossaryentry{bigTheta}{name=Gross-Theta $\Theta()$,
+    description={Die Gross-Theta-Notation $\Theta$ erlaubt es, zu sagen, dass zwei Funktionen $g$ und $f$ bis zu einem konstanten Faktor dasselbe asymptotische Wachstumsverhalten aufweisen, beispielsweise:
+\noindent\hspace*{10mm}%
+$g \in \Theta(f)$
+Wodurch auch $g \in O(f)$ und $g \in \Omega(f)$ gilt. Frei nach~\citeauthor{goodrich2002algorithm} übersetzt (\citeyear[S. 16 bis 17]{goodrich2002algorithm})}
+}
+
+\newglossaryentry{simplex}{name=Simplex,
+  description={Eine konvexe Hülle von $n + 1$ Punkten im $\mathbb{R}^d$, $n <= d$, die nicht in einem $(n - 1)$-dimensionalen Teilaraum liegen, nennt man das Simplex der Dimension $n$~\parencite[S. 23]{klein2005algorithmischegeometrie}}
+}
+
+\newglossaryentry{bisector}{name=Bisektor,
+  description={Eine Gerade zwischen zwei Punkten, bestehend aus Punkten, welche genau denselben Abstand zu den zwei Punkten haben~\parencite[S. 25]{klein2005algorithmischegeometrie}}
+}
+
+\newglossaryentry{euclideanDistance}{name=Euklidischer Abstand,
+  description={Bestimmt den Abstand zweier Punkte. $|x_i - x_j| = \sqrt{{\sum_{k=1}^{m} {(x_ik - x_jk)}^2}}$~\parencite[S. 16]{atsuyuki2000spatialtessellations}}
+}
+
+\newglossaryentry{convexHull}{name=Konvexe Hülle,
+  description={Informell gesagt handelt es sich dabei um die Hülle eines Gummibandes, welches um eine Punktemenge in der Ebene gelegt wird. Oder, etwas formeller: ``Eine Region $R$ ist \textbf{konvex}, wenn jederzeit gilt, dass sich zwei Punkte $p$ und $q$, sowie deren Liniensegment $\overline{pq}$ in $R$ befinden. Die \textbf{konvexe Hülle} einer Punktemenge $S$ ist der Umfang der schmalsten konvexen Region, welche alle Punkte von $S$ beinhaltet bzw\. auf deren Rand hat.''. Frei nach~\citeauthor{goodrich2002algorithm} übersetzt (\citeyear[S. 572 bis 576]{goodrich2002algorithm})}
+}

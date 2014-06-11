@@ -1,0 +1,73 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\usepackage{amssymb}
+\usepackage[pdftex]{graphicx}
+\usepackage{etoolbox}
+\usepackage{paralist}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{floatflt}
+\usepackage[xindy,nonumberlist]{glossaries}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{./bibliography.bib}
+\usepackage[ngerman]{babel}
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage[font=footnotesize,labelfont=bf,justification=raggedright]{caption}
+\usepackage{bm}
+
+% Set TOC title
+\renewcommand{\contentsname}{Inhalt}
+\addto\captionsngerman{\renewcommand{\contentsname}{Inhalt}}
+
+% Set heading
+\defbibheading{head}{\section{Quellenverzeichnis}}
+
+\pagestyle{fancy}
+\fancyhf{}  % empty header and footer
+\fancyhead[L]{\rotatebox{0}{\scalebox{0.5}[0.5]{\includegraphics{images/BFH_Logo_C_de_100_RGB.png}}}}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[L]{Spieltheorie}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage{} /~\pageref{LastPage}}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\input{./glossary.tex}
+\makeglossaries{}
+% Add all glossary entries no matter if they get
+% referenced or not
+\glsaddall{}
+
+\setlength{\headheight}{32pt}
+\setlength{\abovecaptionskip}{2pt plus 3pt minus 2pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt plus 1pt minus 1pt}
+
+\apptocmd{\sloppy}{\hbadness10000\relax}{}{}
+
+% Add all bibliography entries no matter if they
+% get cited or nod
+\nocite{*}
+
+\begin{document}
+\include{title}
+\newpage
+\tableofcontents
+\newpage
+\include{partials/introduction}
+\include{partials/details}
+\newpage
+\include{partials/ending}
+\newpage
+\printbibliography[heading=head]
+\newpage
+\printglossary[numberedsection]
+\end{document}

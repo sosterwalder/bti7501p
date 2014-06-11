@@ -65,10 +65,10 @@ class MiniMaxAlphaBeta(object):
                 ))
                 self.board_interface.undo_last_action()
 
-                if beta <= value:
-                    return value
-
                 alpha = max(alpha, value)
+
+                if beta <= alpha:
+                    return alpha
 
             if len(moves) == 0:
                 self.path.append((
@@ -96,10 +96,10 @@ class MiniMaxAlphaBeta(object):
                 )
                 self.board_interface.undo_last_action()
 
-                if value <= alpha:
-                    return value
-
                 beta = min(beta, value)
+
+                if beta <= alpha:
+                    return beta
 
             if len(moves) == 0:
                 self.path.append((

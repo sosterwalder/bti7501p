@@ -93,37 +93,52 @@ class Controller():
         self.continue_playing = True
 
         while self.continue_playing:
+            start_time = time.clock()
             self.one_game()
             self.continue_playing = False
+            end_time = time.clock()
+            print "Playing time for current game is {0} seconds".format(
+                end_time - start_time
+            )
 
     def one_game(self):
         self.game_is_over = False  # False
         print "Starting game"
         print self.board
 
-        while (not self.game_is_over) and self.illegal_moves < self.ILLEGAL_MOVE_LIMIT:
+        while ((not self.game_is_over)
+                and
+                self.illegal_moves < self.ILLEGAL_MOVE_LIMIT
+               ):
             if self.do_output:
                 print "Current player is {0}, move {1}".format(
                     self.current_player.own_component,
                     self.move
                 )
+            start_time = time.clock()
             best_move = self.current_player.best_move(self.move, self.board)
-            if self.do_output:
-                print "Got best move {0}".format(best_move)
+            end_time = time.clock()
 
             if best_move is None:
+                if self.do_output:
+                    print "Got no best move"
+
                 self.winner = util.Util.switch_player(
                     self.current_player.own_component
                 )
                 break
+
+            if self.do_output:
+                print "Got best move {0} in {1} seconds".format(
+                    best_move,
+                    (end_time - start_time)
+                )
 
             self.apply_action(best_move)
 
             if self.do_output:
                 print self.board
                 print "Score: {0}".format(self.board.score(self.weights))
-                print "No. of illegal moves {0}".format(self.illegal_moves)
-                time.sleep(1)
 
         if self.illegal_moves >= self.ILLEGAL_MOVE_LIMIT:
             print "Reached limit of >= {0} illegal moves!".format(

@@ -30,6 +30,7 @@ import controller.controller    as c
 import controller.weights       as w
 import controller.game_states   as gs
 
+
 def main():
     controller = c.Controller(
         number_of_rows=5,
