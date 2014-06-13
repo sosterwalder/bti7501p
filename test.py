@@ -3,7 +3,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2014 Sven Osterwalder
+# Copyright (c) 2014 Thi Thuy-Duc Dao (daodt1@bfh.ch), Sven Osterwalder (ostes2@bfh.ch)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
