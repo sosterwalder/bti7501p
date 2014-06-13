@@ -1,0 +1,37 @@
+\section{Algorithmen}
+\label{sec:algorithms}
+In der aktuellen Version der Applikation wurde der in der Spieltheorie weit verbreitete Ansatz des Minimax-Verfahrens inklusive Alpha-Beta-Pruning gewählt.
+
+Wie in~\cite{eckerle2014spieltheorie} erwähnt, ist der Algorithmus wie folgt aufgebaut:\\
+
+\begin{lstlisting}
+Begin
+    If (X ist ein Terminalknoten) then 
+        return e(x);
+
+    Elseif (X ist ein MAX-Knoten) then
+
+        Generiere die Menge S(X) aller Kindknoten von X;
+
+        V = -1;
+        Foreach Y aus S(X) do v = max(v, Minimax(Y));
+        Return v;
+
+    Else (X ist ein MIN-Knoten) then
+        Generiere die Menge S(X) aller Kindknoten von X;
+        V = 1;
+        Foreach Y aus S(X) do v= min(v, Minimax(Y));
+        Return v;
+
+    Endif;
+
+End
+\end{lstlisting}
+
+Um die Laufzeit bei optimal gewählter Heuristik auf $O(b^{d/2})$ optimieren zu können, wurde zusätzlich das Alpha-Beta-Pruning gewählt~\parencite{eckerle2014spieltheorie}:\\
+
+\lstinputlisting[language=Python, firstline=63, lastline=72]{../../algorithms/mini_max_alpha_beta.py}
+
+bzw.:\\
+
+\lstinputlisting[language=Python, firstline=88, lastline=102]{../../algorithms/mini_max_alpha_beta.py}

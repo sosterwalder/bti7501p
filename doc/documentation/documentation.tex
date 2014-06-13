@@ -1,5 +1,6 @@
 \documentclass[pdftex,12pt,a4paper]{article}
 
+\usepackage{listings}
 \usepackage{amssymb}
 \usepackage[pdftex]{graphicx}
 \usepackage{etoolbox}
@@ -7,7 +8,6 @@
 \usepackage{mathtools}
 \usepackage{hyperref}
 \usepackage{floatflt}
-\usepackage[xindy,nonumberlist]{glossaries}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{bookmark}
@@ -33,18 +33,12 @@
 \fancyhead[C]{}
 \fancyhead[R]{}
 \renewcommand{\headrulewidth}{0.4pt}
-\fancyfoot[L]{Spieltheorie}
+\fancyfoot[L]{Bericht Projektarbeit BTI7501 --- Spieltheorie}
 \fancyfoot[C]{}
 \fancyfoot[R]{\thepage{} /~\pageref{LastPage}}
 \renewcommand{\footrulewidth}{0.4pt}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-
-\input{./glossary.tex}
-\makeglossaries{}
-% Add all glossary entries no matter if they get
-% referenced or not
-\glsaddall{}
 
 \setlength{\headheight}{32pt}
 \setlength{\abovecaptionskip}{2pt plus 3pt minus 2pt}
@@ -68,6 +62,4 @@
 \include{partials/ending}
 \newpage
 \printbibliography[heading=head]
-\newpage
-\printglossary[numberedsection]
 \end{document}
